@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Nathan Joshua 2172026">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin:0;
+    }
+    #atas1 {
+        background-color: #FFA500;
+        width: 100%;
+        height: 35px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #atas2 {
+        background-color: cyan;
+        width: 100%;
+        height: 35px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #atas3 {
+        background-color: #a00498;
+        width: 100%;
+        height: 35px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #atas4 {
+        background-color: #ff8c00;
+        width: 100%;
+        height: 35px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .hitung{
+        background-color: cyan;
+        border:1px solid darkblue;
+    }
+    
+    .randomb {
+        background-color:rgb(38, 206, 38);
+        width: 70px;
+        height: 30px;
+    }
+    
+    
+
+</style>
+<body>
+
+    <div id="atas1">Penjumlahan</div><br>
+    <input type="number" disabled id="p1"> + <input type="number" disabled id="p2"> = <input type="number" id="p3"> <button class="hitung" id= "hitung1"onclick ="pertambahan();">Hitung</button><br><br>
+    <button class="randomb" id="randomb1" onclick="random();">Random</button> <div id="check"></div><br>
+    <div id="atas2">Pengurangan</div><br>
+    <input type="number" disabled id="m1"> - <input type="number" disabled id="m2"> = <input type="number"  id="m3"> <button class="hitung" id= "hitung2" onclick="pengurangan();">Hitung</button><br><br>
+    <button class="randomb" id="randomb2" onclick="randomkurang();">Random</button><div id="check2"></div><br>
+    <div id="atas3">Perkalian</div><br>
+    <input type="number" disabled id="x1"> * <input type="number" disabled id="x2"> = <input type="number"  id="x3"> <button class="hitung" id= "hitung3" onclick="perkalian()">Hitung</button><br><br>
+    <button class="randomb" id="randomb3" onclick="randomkali();">Random</button><div id="check3"></div><br>
+    <div id="atas4">Bilangan</div><br>
+    <input type="text" disabled id="b1"> = <input type="text" id="b2"> + <input type="text"  id="b3"> + <input type="text"  id="b4"><button class="hitung" id= "hitung4"onclick="hasilbilangan1();">Hitung</button><br><br>
+    <button class="randomb" id="randomb4" onclick="randombilangan();">Random</button><div id="check4"></div>
+   
+    <script>
+        var random1, random2
+        function random (){
+            random1 = Math.floor(Math.random()*999)+100;
+            random2 = Math.floor(Math.random()*999)+100;
+            document.getElementById("p1").value = random1
+            document.getElementById("p2").value = random2
+            return random1;
+            return random2;
+        }
+        function pertambahan (){
+            let hasilplus = random1 + random2
+            let jawaban = document.getElementById("p3").value;
+            if (hasilplus == jawaban){
+                document.getElementById("check").innerHTML= "Jawaban benar";
+            }
+            else {
+                document.getElementById("check").innerHTML= "Jawaban salah"
+            } 
+        }
+        var random3,random4
+        function randomkurang (){
+            random3 = Math.floor(Math.random()*999)+100;
+            random4 = Math.floor(Math.random()*999)+100;
+            document.getElementById("m1").value = random3
+            document.getElementById("m2").value = random4
+            return random3;
+            return random4;
+        }
+        function pengurangan (){
+            let hasilpengurangan = random3 - random4
+            let jawaban = document.getElementById("m3").value;
+            if (hasilpengurangan == jawaban){
+                document.getElementById("check2").innerHTML= "Jawaban benar";
+            }
+            else {
+                document.getElementById("check2").innerHTML= "Jawaban salah"
+            } 
+        }
+    
+        var random5, random6
+        function randomkali (){
+            random3 = Math.floor(Math.random()*100);
+            random4 = Math.floor(Math.random()*100);
+            document.getElementById("x1").value = random3
+            document.getElementById("x2").value = random4
+            return random5;
+            return random6;
+        }
+        function perkalian (){
+            let hasilperkalian = random5 * random6
+            let jawaban = document.getElementById("x3").value;
+            if (hasilperkalian == jawaban){
+                document.getElementById("check3").innerHTML= "Jawaban benar";
+            }
+            else {
+                document.getElementById("check3").innerHTML= "Jawaban salah"
+            } 
+        }
+        var random6
+        function randombilangan() {
+            random6= Math.floor(Math.random()*999)+1;
+            document.getElementById("b1").value = random6;
+        }
+        function hasilbilangan1() {
+            let hasil1 = document.getElementById("b2").value;
+            let hasil2 = document.getElementById("b3").value;
+            let hasil3 = document.getElementById("b4").value;
+            let hasilb = hasil1 + hasil2 + hasil3
+            if (hasilb == random6){
+                document.getElementById("check4").innerHTML= "Jawaban benar";
+            }   
+            else {
+                document.getElementById("check4").innerHTML= "Jawaban salah"
+            }        
+        
+            console.log(hasilb)
+        }
+        
+         
+         
+    
+    </script>
+</body>
+</html>

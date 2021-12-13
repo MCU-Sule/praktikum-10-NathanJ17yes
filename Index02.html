@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Nathan Joshua 2172026">
+    <title>Tic tac toe</title>
+</head>
+<style>
+    body{
+        margin: auto;
+        padding: 0;
+    }
+   table{
+       border: 1px solid black;
+       margin-left: auto;
+       margin-right: auto;
+       
+   }
+   .isi {
+       border: 1px solid black;
+       height: 120px;
+       width: 120px;
+       text-align: center;
+       font-size: 75px;
+   }
+   #reset {
+       margin-left: 47%;
+       width: 100px;
+       height: 40px;
+   }
+   #turn {
+       margin-left: 2%;
+       text-align: center;
+       font-size: 50px;
+   }
+   #hasil {
+       margin-left: 2%;
+       text-align: center;
+       font-size: 50px;
+   }
+</style>
+<body>
+    <h1 style="text-align: center;">Tic Tac Toe</h1><br>
+    <table>
+        <tr class = "container">
+            <td class = "isi" id = "isi1" onclick= "klikX(1); check();" ></td>
+            <td class = "isi" id = "isi2" onclick= "klikX(2); check(); " ></td>
+            <td class = "isi" id = "isi3" onclick= "klikX(3); check(); " ></td>
+        </tr>
+        <tr class="container">
+            <td class = "isi" id = "isi4"  onclick= "klikX(4); check();"></td>
+            <td class = "isi" id = "isi5"  onclick= "klikX(5); check(); "></td>
+            <td class = "isi" id = "isi6"  onclick= "klikX(6); check(); "></td>
+        </tr>
+        <tr class="container">
+            <td class = "isi" id = "isi7"  onclick= "klikX(7); check(); "></td>
+            <td class = "isi" id = "isi8"  onclick= "klikX(8); check(); "></td>
+            <td class = "isi" id = "isi9"  onclick= "klikX(9); check(); "></td>
+        </tr>
+    </table><br>
+    <div id = "turn"></div>
+    <button id = "reset" onclick= reset()>Restart Game</button>
+    
+
+<script>
+   let urutan = true 
+   function reset (){
+       document.getElementById("isi1").innerHTML = ""
+       document.getElementById("isi2").innerHTML = ""
+       document.getElementById("isi3").innerHTML = ""
+       document.getElementById("isi4").innerHTML = ""
+       document.getElementById("isi5").innerHTML = ""
+       document.getElementById("isi6").innerHTML = ""
+       document.getElementById("isi7").innerHTML = ""
+       document.getElementById("isi8").innerHTML = ""
+       document.getElementById("isi9").innerHTML = ""
+       document.getElementById("isi1").style.backgroundColor = "white"
+       document.getElementById("isi2").style.backgroundColor = "white"
+       document.getElementById("isi3").style.backgroundColor = "white"
+       document.getElementById("isi4").style.backgroundColor = "white"
+       document.getElementById("isi5").style.backgroundColor = "white"
+       document.getElementById("isi6").style.backgroundColor = "white"
+       document.getElementById("isi7").style.backgroundColor = "white"
+       document.getElementById("isi8").style.backgroundColor = "white"
+       document.getElementById("isi9").style.backgroundColor = "white"
+       document.getElementById("turn").innerHTML = ""
+   }
+   function klikX(number) {
+    if (urutan == true){
+        document.getElementById("turn").innerHTML = "Player O turn"
+        document.getElementById("isi"+number).innerHTML= "X";
+        urutan = false
+    }
+    else {
+        document.getElementById("turn").innerHTML = "Player X turn"
+        document.getElementById("isi"+number).innerHTML="O"
+        urutan = true
+    }
+   }
+   function check() {
+   let isi1 = document.getElementById("isi1").innerHTML
+   let isi2 = document.getElementById("isi2").innerHTML
+   let isi3 = document.getElementById("isi3").innerHTML
+   let isi4 = document.getElementById("isi4").innerHTML
+   let isi5 = document.getElementById("isi5").innerHTML
+   let isi6 = document.getElementById("isi6").innerHTML
+   let isi7 = document.getElementById("isi7").innerHTML
+   let isi8 = document.getElementById("isi8").innerHTML
+   let isi9 = document.getElementById("isi9").innerHTML
+   
+       if (isi1 == "X" && isi2 == "X" && isi3 == "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi1").style.backgroundColor = "yellow"
+        document.getElementById("isi2").style.backgroundColor = "yellow"
+        document.getElementById("isi3").style.backgroundColor = "yellow"
+       }
+       else if (isi1== "X" && isi4== "X" && isi7== "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi1").style.backgroundColor = "yellow"
+        document.getElementById("isi4").style.backgroundColor = "yellow"
+        document.getElementById("isi7").style.backgroundColor = "yellow"
+       }
+       else if (isi1== "X" && isi5== "X" && isi9== "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi1").style.backgroundColor = "yellow"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi9").style.backgroundColor = "yellow"
+       }
+       else if (isi2== "X" && isi5== "X" && isi8== "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi2").style.backgroundColor = "yellow"
+        document.getElementById("isi8").style.backgroundColor = "yellow"
+       }
+       else if (isi3== "X" && isi6== "X" && isi9== "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi6").style.backgroundColor = "yellow"
+        document.getElementById("isi9").style.backgroundColor = "yellow"
+        document.getElementById("isi3").style.backgroundColor = "yellow"
+       }
+       else if (isi3== "X" && isi5== "X" && isi7== "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi7").style.backgroundColor = "yellow"
+        document.getElementById("isi3").style.backgroundColor = "yellow"
+       }
+       else if (isi4== "X" && isi5== "X" && isi6== "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi4").style.backgroundColor = "yellow"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi6").style.backgroundColor = "yellow"
+       }
+       else if (isi7== "X" && isi8== "X" && isi9== "X"){
+        document.getElementById("turn").innerHTML= "Player X won"
+        document.getElementById("isi7").style.backgroundColor = "yellow"
+        document.getElementById("isi8").style.backgroundColor = "yellow"
+        document.getElementById("isi9").style.backgroundColor = "yellow"
+       }
+       else if (isi1== "O" && isi2== "O" && isi3== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi1").style.backgroundColor = "yellow"
+        document.getElementById("isi2").style.backgroundColor = "yellow"
+        document.getElementById("isi3").style.backgroundColor = "yellow"
+       }
+       else if (isi1== "O" && isi4== "O" && isi7== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi1").style.backgroundColor = "yellow"
+        document.getElementById("isi4").style.backgroundColor = "yellow"
+        document.getElementById("isi7").style.backgroundColor = "yellow"
+       }
+       else if (isi1== "O" && isi5== "O" && isi9== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi1").style.backgroundColor = "yellow"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi9").style.backgroundColor = "yellow"
+       }
+       else if (isi2== "O" && isi5== "O" && isi8== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi2").style.backgroundColor = "yellow"
+        document.getElementById("isi8").style.backgroundColor = "yellow"
+       }
+       else if (isi3== "O" && isi6== "O" && isi9== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi6").style.backgroundColor = "yellow"
+        document.getElementById("isi9").style.backgroundColor = "yellow"
+        document.getElementById("isi3").style.backgroundColor = "yellow"
+       }
+       else if (isi3== "O" && isi5== "O" && isi7== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi3").style.backgroundColor = "yellow"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi7").style.backgroundColor = "yellow"
+       }
+       else if (isi4== "O" && isi5== "O" && isi6== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi4").style.backgroundColor = "yellow"
+        document.getElementById("isi5").style.backgroundColor = "yellow"
+        document.getElementById("isi6").style.backgroundColor = "yellow"
+       }
+       else if (isi7== "O" && isi8== "O" && isi9== "O"){
+        document.getElementById("turn").innerHTML= "Player O won"
+        document.getElementById("isi7").style.backgroundColor = "yellow"
+        document.getElementById("isi8").style.backgroundColor = "yellow"
+        document.getElementById("isi9").style.backgroundColor = "yellow"
+       }
+       
+   }
+   
+  
+</script>
+    
+
+    
+</body>
+</html>

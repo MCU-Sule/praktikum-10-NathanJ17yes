@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Nathan Joshua 2172026">
+    <title>Document</title>
+</head>
+<style>
+    #bulat {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <div id = "bulat"></div>
+    <script>
+       var bulat = document.getElementById("bulat");
+       
+       document.addEventListener('mousemove', function(e){
+         var horizontal = e.clientX-25;
+         var vertikal = e.clientY-25;
+         bulat.style.left = horizontal + "px";
+         bulat.style.top = vertikal + "px";
+       })
+    </script>
+</body>
+</html>
